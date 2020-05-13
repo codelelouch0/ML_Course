@@ -339,8 +339,11 @@ def ml_loop(side: str):
 
         # 3.4 Send the instruction for this frame to the game process
         if not ball_served:
-            comm.send_to_game({"frame": scene_info["frame"], "command": "SERVE_TO_RIGHT"})
-            ball_served = True
+            if scene_info["ball_speed"][0] != 0:
+                ball_served = True
+            else:
+                pass
+            
         else:
             if side == "1P":
                 if prediction[0] < scene_info["platform_1P"][0] + 30 and prediction[0] > scene_info["platform_1P"][0] +10:
