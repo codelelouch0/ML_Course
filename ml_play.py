@@ -28,9 +28,7 @@ def ml_loop(side: str):
     # === Here is the execution order of the loop === #
     # 1. Put the initialization code here
     ball_served = False
-    filename = path.join(path.dirname(__file__),"clf_RandomForestRegressor_1p.pickle")
-    with open(filename, 'rb') as file:
-        clf = pickle.load(file)
+    
     
     def move_to(player, pred) : #move platform to predicted position to catch ball 
         if player == '1P':
@@ -43,7 +41,7 @@ def ml_loop(side: str):
             else : return 1 # goes left
     
     def ml_loop_for_1P(feature): 
-        x = clf.predict(feature)
+        x = 2
         if x + 1 < scene_info["platform_1P"][0]+30 and x - 1 > scene_info["platform_1P"][0]+10:
             
             if 420 - scene_info["ball"][1] <= 7:
