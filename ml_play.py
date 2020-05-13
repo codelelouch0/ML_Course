@@ -339,6 +339,7 @@ def ml_loop(side: str):
 
         # 3.4 Send the instruction for this frame to the game process
         if not ball_served:
+            
             if scene_info["ball_speed"][0] != 0:
                 ball_served = True
             else:
