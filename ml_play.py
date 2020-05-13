@@ -343,6 +343,7 @@ def ml_loop(side: str):
             comm.send_to_game({"frame": scene_info["frame"], "command": "SERVE_TO_LEFT"})
             ball_served = True
             '''
+            pass
         else:
             if side == "1P":
                 if prediction[0] < scene_info["platform_1P"][0] + 30 and prediction[0] > scene_info["platform_1P"][0] +10:
